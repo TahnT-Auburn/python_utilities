@@ -19,28 +19,24 @@
 '''
 
 import matplotlib.pyplot as plt
-
 import numpy as np
 
 class Plotters:
 
     def __init__(self):
-        '''
+        """
         Class Description:
             A class to handle plotting data and figures.
         Class Instance Input(s):
             None
-        '''
+        """
 
-    def matPlot(self, config:str='', sig_count:str='single', **kwargs):
-        '''
-        Description:
+    def matPlot(self, sig_count:str='single', **kwargs):
+        """
+        `Description`:
             Plotting one or more singals on a single figure with MatPlotLib Library
-        Input(s):
-
-            [configurations]:
-            config: Additional figure configuration settings (file path)
-                    type: <str>
+        ------------
+        `Input(s)`:
 
             sig_count: Count of signal(s). 
                           type: <str>
@@ -48,7 +44,7 @@ class Plotters:
                           * single (default): Plots a single signal on a figure
                           * multi: Plots multiple signals on the same figure
 
-            [**kwargs]:
+            `**kwargs`:
             signals(s): Signal(s) for plotting
                        type: <list>
                        NOTE: single format: signal = list[x,y]
@@ -62,7 +58,10 @@ class Plotters:
             [optional] legend: Legend
                         type: <list>
                         NOTE: legend format: list['signal1', ..., 'singal2']
-        '''
+        ------------
+        `Ouput(s)`:
+            None
+        """
         #Parse inputs
         inp_sig = False
         inp_lab = False
