@@ -16,9 +16,9 @@
         <pyyaml>
         <python-box>
 
-
 #######################################################
 '''
+
 import pandas as pd
 import yaml
 import myaml
@@ -34,7 +34,7 @@ class Parsers:
             None *class method specific*
         """
 
-    def csvParser(self, csv_file:str):
+    def csvParser(self, csv_file:str, header='infer'):
         """
         `Description`: 
             Parses cvs files and stores csv data in a python data frame.
@@ -42,6 +42,8 @@ class Parsers:
         `Input(s)`:
             `csv_file`: Name of csv file
                         type: <str>
+            `header`:   Row number(s) containing column labels
+                        type: <int> default: 'infer'
         ------------
         `Output(s)`:
             `csv_data`: csv data frame
@@ -49,7 +51,7 @@ class Parsers:
         """
 
         #Read csv file using pandas
-        csv_data = pd.read_csv(csv_file, delimiter=',', header=0)
+        csv_data = pd.read_csv(csv_file, delimiter=',', header=header)
         
         return csv_data
 
